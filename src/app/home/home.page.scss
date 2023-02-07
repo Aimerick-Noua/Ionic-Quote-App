@@ -1,0 +1,19 @@
+
+ion-content{
+  ion-card{
+    ion-col{
+      ion-img{
+        position: absolute;
+        top: 25%;
+        left:5%;
+        width:55px;
+      }
+    }
+
+    ion-card-title{
+      font-weight: 200;
+      color:#B2B7F2;
+      text-align: end;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<ion-header  collapse="fade" >
+  <ion-toolbar>
+    <ion-title style="font-size: 30px;">All Quotes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let quote of quotes">
+        <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="4">
+              <ion-img src="assets/image.png"></ion-img>
+            </ion-col>
+            <ion-col size="8" class="ion-align-items-self-end">
+              <ion-card-subtitle style="text-align: end;">{{quote.tags}}</ion-card-subtitle>
+              <ion-card-title>{{quote.author}}</ion-card-title>
+            </ion-col>
+            <span style="font-weight: 300; margin: 15px; font-size: 1.2rem;">
+              {{quote.content}}
+            </span>
+          </ion-row>
+        </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<ion-infinite-scroll (ionInfinite)="loadMore($event)">
+  <ion-infinite-scroll-content
+  loadingSpinner="lines"
+  loadingText="Loading more quotes..."
+  >
+
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
